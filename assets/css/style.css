@@ -1,6 +1,10 @@
 :root{
     --underline-color:#000000;
 }
+@font-face {
+    font-family: Inter;
+    src: url('../fonts/Inter-Regular.ttf');
+}
 .evw_invoice_content_container *{
     padding: 0;
     margin: 0;
@@ -9,16 +13,19 @@
 }
 .evw_container{
     display: flex;
+    flex-direction: column;
    
 }
 .evw_invoice_content_container{
     /* max-width: 70%; */
-    max-width: 720px;
-    border: 1px solid var(--underline-color);
+    max-width: 796px;
+    /* max-width: ; */
+    max-height: 1120px;
+    /* border: 1px solid var(--underline-color); */
     font-size: 12px;
     margin: auto;
-    padding: 52px 64px;
-    font-family:"Inter", sans-serif;
+    padding: 28px 42px;
+    font-family: Inter;
     font-weight: 400;
 }
 .evw_invoice_address{
@@ -30,19 +37,18 @@
     flex-direction: column;
 }
 .evw_address_and_delivery_add .evw_ews_title{
-    margin: 12px 0 0 0;
+    margin: 8px 0 0 0;
 }
 .evw_address_delivery .address_delivery_title{
-    margin-bottom: 14px;
+    margin-bottom: 12px;
 }
 .evw_address_and_delivery_add .evw_address{
-    margin: 32px 0 42px 0;
+    margin: 12px 0 12px 0;
 }
 .evw_address_and_delivery_add .evw_address,
 .evw_address_and_delivery_add .evw_address_delivery{
     display: flex;
     flex-direction: column;
-    column-gap: 64px;
 }
 
 /* ref number */
@@ -54,11 +60,16 @@
     flex-direction: column;
 }
 .reference_number_title{
-    margin: 8% 0 4% 0;
+    margin: 12px 0 8px 0;
 }
 .evw_logo_ref_number .order_reference{
     display: flex;
-    gap: 32px;
+    flex-direction: row;
+    gap: 24px;
+}
+.evw_logo_ref_number .evw_logo img{
+    width: 290px;
+    height: 75px;
 }
 .evw_logo_ref_number .order_reference span{
     display: flex;
@@ -66,14 +77,14 @@
 }
 /* note text */
 .evw_comment_note{
-    margin: 42px 0 20px 0;
+    margin: 12px 0 8px 0;
 }
 /* evw_invoice_content */
 .evw_invoice_content .invoice_details_grid{
     display: grid;
     grid-template-columns: 0.8fr 0.8fr 2fr 0.7fr 0.5fr 0.55fr;
     grid-template-rows: auto;
-    row-gap: 10px;
+    /* row-gap: 10px; */
 }
 .evw_invoice_content .invoice_details_grid .grid-item{
     padding: 6px 2px;
@@ -100,7 +111,7 @@
 .invoice_details_grid .item21,
 .invoice_details_grid .item22{
     border-top: 1px solid var(--underline-color);
-    margin-top: 52px;
+    margin-top: 32px;
 }
 .invoice_details_grid .item24,
 .invoice_details_grid .item25,
@@ -132,30 +143,30 @@ section .evw_terms_payment_section{
 section .evw_terms_payment_section .terms_of_payment_title{
     font-size: 16px;
     font-weight: 600;
-    margin: 32px 0 8px 0;
+    margin: 24px 0 4px 0;
 }
 section .evw_terms_payment_section .payment_advance{
     background: #D9D9D9;
     padding: 4px;
 }
 section .evw_terms_payment_section .position_marked{
-    margin: 20px 0;
+    margin: 6px 0;
 }
 section .evw_terms_payment_section .thank_you{
-    margin: 12px 0;
+    margin: 4px 0;
 }
 .evw_currentprice_deliverysituation .evw_currentprice_deliverysituation_title{
-    margin-top: 12px;
+    margin-top: 6px;
     font-size: 16px;
 }
 .evw_currentprice_deliverysituation .deliverysituation_text{
-    margin: 12px 0 20px 0;
+    margin: 6px 0 10px 0;
 }
 /* footer  */
 .evw_footer_data{
     display: flex;
     justify-content: space-between;
-    margin: 32px 0;
+    margin: 8px 0;
     /* gap: 8px; */
     /* align-items: center; */
 }
@@ -169,7 +180,8 @@ section .evw_terms_payment_section .thank_you{
     flex-direction: row;
     /* justify-content: end; */
     gap: 12px;
-    align-items:flex-start;
+    justify-content: end;
+    margin-right: calc((100% - 796px)/2);
 }
 .evw_download_print_btns .evw_btn{
     padding: 8px 16px;

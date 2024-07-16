@@ -1,24 +1,25 @@
-;(async function($){
+;(function($){
     function download_or_print_pdf( stream_type ){
-        // window.html2canvas = html2canvas
-        domtoimage.toPng($('.evw_invoice_content'),{
-            width: $('.evw_invoice_content').clientWidth * 3,
-            height: $('.evw_invoice_content').clientHeight * 3,
+        window.html2canvas = html2canvas
+        domtoimage.toPng($('.evw_invoice_content_container')[0],{
+            width: $('.evw_invoice_content_container')[0].clientWidth * 5,
+            height: $('.evw_invoice_content_container')[0].clientHeight * 5,
             style: {
-                transform: 'scale(5)',
+                transform: 'scale(3.5)',
                 transformOrigin: 'top left'
             }
         }).then(canvas => {
             var doc = new jspdf.jsPDF({
                 orientation: "landscape",
                 unit: "in",
-                format: 'A4'
+                format: 'A4',
+                compress: true
             });
-            if( window.innerWidth <= 425 ) {
-                doc.addImage(canvas, 'PNG', -0.20, -0.25, 11.95, 8.55, '' , 'FAST' );
-            }else{
-                doc.addImage(canvas, 'PNG', -0.5, -0.25, 11.95, 8.55, '' , 'FAST' );
-            }
+            // if( window.innerWidth <= 425 ) {
+            //     doc.addImage(canvas, 'PNG', -0.5, -0.25, 11.95, 8.55, '' , 'FAST' );
+            // }else{
+                doc.addImage(canvas, 'PNG', 2.5, 0, 8.3, 11.7, '', 'FAST' );
+            // }
             if( stream_type == "print" ) {
                 const blob = doc.output("bloburl")
                 window.open(blob)
