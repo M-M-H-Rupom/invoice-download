@@ -14,16 +14,15 @@
 .evw_container{
     display: flex;
     flex-direction: column;
-   
 }
 .evw_invoice_content_container{
     /* max-width: 70%; */
     max-width: 796px;
     /* max-width: ; */
     max-height: 1120px;
-    /* border: 1px solid var(--underline-color); */
+    border: 1px solid var(--underline-color);
     font-size: 12px;
-    margin: auto;
+    /* margin: auto; */
     padding: 28px 42px;
     font-family: Inter;
     font-weight: 400;
