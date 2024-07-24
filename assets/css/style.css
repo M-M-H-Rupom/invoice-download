@@ -1,9 +1,9 @@
-:root{
-    --underline-color:#000000;
-}
 @font-face {
     font-family: Inter;
     src: url('../fonts/Inter-Regular.ttf');
+}
+:root{
+    --underline-color:#000000;
 }
 .evw_invoice_content_container *{
     padding: 0;
@@ -16,13 +16,12 @@
     flex-direction: column;
 }
 .evw_invoice_content_container{
-    /* max-width: 70%; */
+    /* display: none; */
     max-width: 796px;
-    /* max-width: ; */
-    max-height: 1120px;
+    /* max-height: 1120px; */
     border: 1px solid var(--underline-color);
     font-size: 12px;
-    /* margin: auto; */
+    margin: auto;
     padding: 28px 42px;
     font-family: Inter;
     font-weight: 400;
@@ -96,36 +95,32 @@
 .invoice_details_grid .item6 {
     border-bottom: 1px solid var(--underline-color); 
 }
-.invoice_details_grid .item9,
-.invoice_details_grid .item15{
+.invoice_details_grid .item_product_description{
     margin-right:24px;
 }
-.invoice_details_grid .item19,
-.invoice_details_grid .item23,
-.invoice_details_grid .item27{
+
+.invoice_details_grid .item_em{
     grid-column: 1 / 4;
 }
 
-.invoice_details_grid .item20,
-.invoice_details_grid .item21,
-.invoice_details_grid .item22{
+.invoice_details_grid .item_total_net,
+.invoice_details_grid .item_total_net_eur,
+.invoice_details_grid .item_total_net_amount{
     border-top: 1px solid var(--underline-color);
     margin-top: 32px;
 }
-.invoice_details_grid .item24,
-.invoice_details_grid .item25,
-.invoice_details_grid .item26{
+.invoice_details_grid .bottom_underline{
     border-bottom: 1px solid var(--underline-color);
 }
-.invoice_details_grid .item28,
-.invoice_details_grid .item29,
-.invoice_details_grid .item30{
+.invoice_details_grid .item_total_gross_text,
+.invoice_details_grid .item_total_gross_eur,
+.invoice_details_grid .item_total_gross_amount{
     border-bottom: 1px solid var(--underline-color);
     position: relative;
 }
-.invoice_details_grid .item28::after,
-.invoice_details_grid .item29::after,
-.invoice_details_grid .item30::after {
+.invoice_details_grid .item_total_gross_text::after,
+.invoice_details_grid .item_total_gross_eur::after,
+.invoice_details_grid .item_total_gross_amount::after {
     content: '';
     position: absolute;
     width: 100%;
@@ -178,13 +173,14 @@ section .evw_terms_payment_section .thank_you{
     display: flex;
     flex-direction: row;
     /* justify-content: end; */
-    gap: 12px;
-    justify-content: end;
-    margin-right: calc((100% - 796px)/2);
+    /* gap: 12px; */
+    justify-content: space-between;
+    /* align-items: center; */
 }
 .evw_download_print_btns .evw_btn{
     padding: 8px 16px;
-    background-color: blueviolet;
+    margin: 4px 0 8px;
+    background-color: #6c5ce7;
     border-radius: 5px;
     color: white;
 }
